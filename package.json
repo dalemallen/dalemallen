@@ -11,8 +11,5 @@
     "concurrently": "^7.0.0"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "swiper": "^11.2.6"
-  }
+  "license": "ISC"
 }

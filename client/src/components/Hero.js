@@ -44,7 +44,7 @@ export default function Hero() {
                 sx={{ fontSize: { xs: "2.8rem", md: "3rem" } }}
                 color="primary"
               >
-                We Design & Build fast, accessible websites.
+                I Build fast, accessible websites.
               </Typography>
             </motion.div>
             <motion.div
