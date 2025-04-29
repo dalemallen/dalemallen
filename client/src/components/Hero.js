@@ -93,7 +93,8 @@ export default function Hero() {
           <Grid item size={{ xs: 12, sm: 6 }} order={{ xs: 1, sm: 2 }}>
             <Box
               component="img"
-              src="/images/profile.png"
+              loading="lazy"
+              src="/images/profile.webp"
               alt="Dale Allen Visual"
               sx={{ width: "100%" }}
             />

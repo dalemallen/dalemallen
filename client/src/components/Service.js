@@ -35,7 +35,7 @@ const services = [
     icon: <FaProjectDiagram size={28} />,
     title: "Strategic Planning",
     description:
-      "We map out a clear development path that aligns with your business goals and growth objectives.",
+      "I map out a clear development path that aligns with your business goals and growth objectives.",
   },
   {
     icon: <FaPalette size={28} />,

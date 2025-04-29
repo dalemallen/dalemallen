@@ -40,10 +40,22 @@ export default function Navbar() {
       }}
     >
       <Toolbar sx={{ justifyContent: "space-between" }}>
-        <Typography variant="h6" fontWeight="bold">
-          Dale Allen
-        </Typography>
-
+        <MuiLink
+          href="#hero"
+          underline="none"
+          sx={{
+            color: "#fff",
+            textTransform: "none",
+            fontWeight: 500,
+            "&:hover": {
+              color: "#4EB1B1",
+            },
+          }}
+        >
+          <Typography variant="h6" fontWeight="bold">
+            Dale Allen
+          </Typography>
+        </MuiLink>
         {isMobile ? (
           <>
             <IconButton
@@ -59,6 +71,7 @@ export default function Navbar() {
               open={Boolean(anchorEl)}
               onClose={handleClose}
               PaperProps={{ sx: { backgroundColor: "#1a1a1a", color: "#fff" } }}
+              ariaLabel="Open Menu"
             >
               {navItems.map((item) => (
                 <MenuItem key={item.anchor} onClick={handleClose}>
