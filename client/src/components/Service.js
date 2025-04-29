@@ -77,10 +77,11 @@ export default function ServiceSection() {
     >
       <Container maxWidth="lg">
         <Typography
-          variant="h4"
-          textAlign="center"
+          variant="h3"
           fontWeight={700}
-          gutterBottom
+          mb={2}
+          color="primary.main"
+          textAlign="center"
         >
           Services Tailored to Your Success
         </Typography>

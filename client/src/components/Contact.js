@@ -32,9 +32,18 @@ export default function ContactSection() {
         color: "#fff",
         display: "flex",
         alignItems: "center",
+        justifyContent: "center",
       }}
     >
-      <Grid container spacing={4} maxWidth="lg" margin="auto">
+      <Grid
+        container
+        spacing={4}
+        maxWidth="lg"
+        margin="auto"
+        sx={{
+          margin: 2,
+        }}
+      >
         {/* Left Column: Centered Options */}
         <Grid item size={{ xs: 12, md: 5 }}>
           <Box
@@ -51,7 +60,11 @@ export default function ContactSection() {
                   key={option.value}
                   onClick={() => handleSelect(option.value)}
                   variant={selected === option.value ? "contained" : "outlined"}
-                  color={selected === option.value ? "primary" : "secondary"}
+                  color={
+                    selected === option.value
+                      ? "primary.main"
+                      : "secondary.main"
+                  }
                   sx={{
                     display: "flex",
                     alignItems: "center",
@@ -62,10 +75,11 @@ export default function ContactSection() {
                     color: "#fff",
                     textTransform: "none",
                     backgroundColor:
-                      selected === option.value ? "#1976d2" : "transparent",
+                      selected === option.value
+                        ? "primary.main"
+                        : "transparent",
                     "&:hover": {
-                      backgroundColor:
-                        selected === option.value ? "#1565c0" : "#222",
+                      backgroundColor: selected === "secondary.main",
                       borderColor: "#777",
                     },
                   }}
@@ -93,12 +107,14 @@ export default function ContactSection() {
                 key={selected}
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                // exit={{ y: 50, opacity: 0 }}
+                exit={{ y: 50, opacity: 0 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                <Typography variant="h6" gutterBottom color="black">
-                  {selectedForm.label}
-                </Typography>
+                <Typography
+                  variant="h6"
+                  gutterBottom
+                  color="black"
+                ></Typography>
                 {selectedForm.form}
               </motion.div>
             </AnimatePresence>

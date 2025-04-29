@@ -1,4 +1,4 @@
-// ContactPage.jsx
+// Skills.js
 import { Box, Typography, Container, Grid } from "@mui/material";
 import { motion } from "framer-motion";
 import {
@@ -27,59 +27,66 @@ const skills = [
 
 export default function Skills() {
   return (
-    <Box id="skills" sx={{ py: 8, backgroundColor: "#0e0e0e", color: "#fff" }}>
+    <Box
+      id="skills"
+      sx={{
+        py: 10,
+        backgroundColor: "background.default",
+        color: "text.primary",
+        textAlign: "center",
+      }}
+    >
       <Container maxWidth="md">
-        <Typography
-          variant="h4"
-          fontWeight={700}
-          textAlign="center"
-          gutterBottom
-        >
+        <Typography variant="h3" fontWeight={700} mb={2} color="primary.main">
           My Tech Stack
         </Typography>
-        <Typography
-          variant="subtitle1"
-          textAlign="center"
-          color="#bbb"
-          sx={{ mb: 6 }}
-        >
+
+        <Typography variant="subtitle1" color="text.secondary" mb={8}>
           Core technologies I work with
         </Typography>
+
         <Grid container spacing={4} justifyContent="center">
           {skills.map((skill, idx) => {
             const IconComponent = skill.icon;
             return (
-              <Grid item size={{ xs: 12, sm: 6, md: 4 }} key={idx}>
+              <Grid
+                item
+                size={{ xs: 4, sm: 4, md: 3 }}
+                key={idx}
+                component={motion.div}
+                whileHover={{ scale: 1.08 }}
+                transition={{ type: "spring", stiffness: 250 }}
+              >
                 <Box
-                  component={motion.div}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
                   sx={{
                     p: 3,
                     borderRadius: 3,
-                    backgroundColor: "#1f1f1f",
-                    textAlign: "center",
-                    border: "1px solid #2c2c2c",
+                    backgroundColor: "background.paper",
+                    border: "1px solid #333",
+                    height: "100%",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
+                    justifyContent: "center",
                     gap: 1,
+                    transition: "background-color 0.3s",
+                    "&:hover": {
+                      backgroundColor: "#222", // slightly lighter on hover
+                    },
+                    "& .skill-icon": {
+                      fontSize: 48,
+                      color: "text.secondary",
+                      transition: "color 0.3s ease",
+                    },
                     "&:hover .skill-icon": {
                       color: skill.color,
                     },
                   }}
                 >
-                  <Box
-                    className="skill-icon"
-                    sx={{
-                      fontSize: 48,
-                      transition: "color 0.3s ease",
-                      color: "#ffffff",
-                    }}
-                  >
+                  <Box className="skill-icon">
                     <IconComponent />
                   </Box>
-                  <Typography variant="subtitle1" fontWeight={500}>
+                  <Typography variant="subtitle1" fontWeight={600}>
                     {skill.label}
                   </Typography>
                 </Box>

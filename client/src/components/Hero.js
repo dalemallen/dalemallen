@@ -1,5 +1,5 @@
 // HeroPage.jsx
-import { Box, Typography, Button, Container, Grid } from "@mui/material";
+import { Box, Typography, Button, Container, Grid, Stack } from "@mui/material";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -21,7 +21,6 @@ export default function Hero() {
       }}
     >
       <Container
-        maxWidth="xl"
         sx={{
           textAlign: {
             xs: "center", // Center text on extra-small screens
@@ -43,8 +42,9 @@ export default function Hero() {
                 fontWeight={700}
                 gutterBottom
                 sx={{ fontSize: { xs: "2.8rem", md: "3rem" } }}
+                color="primary"
               >
-                I design & build fast, accessible websites.
+                We Design & Build fast, accessible websites.
               </Typography>
             </motion.div>
             <motion.div
@@ -52,10 +52,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 1.2 }}
             >
-              <Typography
-                variant="h6"
-                sx={{ color: "#b0b0b0", mt: 2, maxWidth: "100%" }}
-              >
+              <Typography variant="h6" sx={{ mt: 2, maxWidth: "100%" }}>
                 React developer with 6+ years of experience delivering
                 performant interfaces using modern frameworks and design
                 systems.
@@ -66,16 +63,31 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 1.2 }}
             >
-              <Box mt={4}>
+              <Stack
+                direction="row"
+                spacing={2}
+                marginTop={2}
+                justifyContent="center"
+              >
+                <Button
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                  href="#contact"
+                  aria-label="Contact Me"
+                >
+                  Contact Me
+                </Button>
                 <Button
                   variant="outlined"
+                  color="secondary"
                   size="large"
-                  sx={{ borderColor: "#ffffff", color: "#ffffff" }}
-                  href="#contact"
+                  href="#skills"
+                  aria-label="View Skills"
                 >
-                  Let's Work Together
+                  View Skills
                 </Button>
-              </Box>
+              </Stack>
             </motion.div>
           </Grid>
           <Grid item size={{ xs: 12, sm: 6 }} order={{ xs: 1, sm: 2 }}>

@@ -1,7 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
-import { CircularProgress, Box } from "@mui/material";
-
+import {
+  CircularProgress,
+  Box,
+  ThemeProvider,
+  CssBaseline,
+} from "@mui/material";
+import "./App.css";
+import theme from "./theme/theme";
 // Lazy-loaded components
 const HomePage = lazy(() => import("./components/Homepage"));
 
@@ -24,9 +30,12 @@ function App() {
             </Box>
           }
         >
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-          </Routes>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+            </Routes>
+          </ThemeProvider>
         </Suspense>
       </Router>
     </>

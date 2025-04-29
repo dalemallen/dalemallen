@@ -42,8 +42,8 @@ export default function Navbar() {
                 borderBottom: "2px solid transparent",
                 transition: "0.2s ease-in-out",
                 "&:hover": {
-                  color: "#90caf9",
-                  borderBottom: "2px solid #90caf9",
+                  color: "#4EB1B1",
+                  borderBottom: "2px solid #4EB1B1",
                 },
               }}
             >
